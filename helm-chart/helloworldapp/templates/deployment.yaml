@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "helloworldapp.fullname" . }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ template "helloworldapp.name" . }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ template "helloworldapp.name" . }}
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: {{ template "helloworldapp.name" . }}
+        ports:
+        - containerPort: 80
+          name: {{ template "helloworldapp.name" . }}

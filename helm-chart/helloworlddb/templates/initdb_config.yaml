@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb-config
+data:
+  initdb.sql: |
+    # create databases
+    CREATE DATABASE IF NOT EXISTS `helloworld`;
+    use helloworld;
+    CREATE TABLE helloworld (message varchar(255));
+    INSERT INTO helloworld (message) VALUES ('welcome to demo');
