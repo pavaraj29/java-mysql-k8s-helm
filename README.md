@@ -42,6 +42,7 @@ Open helm-chart/helloworldapp/templates/values.yaml and provide docker image nam
 <If you want to execute deployment with default values you can skip all above steps except cloning application code and deployment config files>
 Make sure you have helm installed and initialized tiller pod by executing "helm init" command
 Go to helm-chart folder and execute below commands
+  
 #### Installing DB chart
 ```
 helm install helloworlddb
