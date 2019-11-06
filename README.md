@@ -23,6 +23,7 @@ Clone this repository to local
 ```
 git clone https://github.com/pavaraj29/java-mysql-k8s-helm
 ```
+(If you want to execute deployment with default values you can directly go to Performing deployment through Helm step) <br />
 ### Choosing root password of mysql database and updating it in secrets file and application code
 Choose a root password for mysql database and encrypt it
 ```
@@ -39,7 +40,6 @@ docker push <provide your repository name>/<provide your imagename>
 ### Updating image name in values.yaml file of application helm chart
 Open helm-chart/helloworldapp/templates/values.yaml and provide docker image name under image->repository
 ### Performing deployment through Helm
-(If you want to execute deployment with default values you can skip all above steps except cloning application code and deployment config files) <br />
 Make sure you have helm installed and initialized tiller pod by executing "helm init" command, <br />
 Go to helm-chart folder and execute below commands <br />
   
